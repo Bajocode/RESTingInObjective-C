@@ -11,8 +11,8 @@
 		222189981EDC03F000448CE8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 222189971EDC03F000448CE8 /* AppDelegate.m */; };
 		222189A01EDC03F000448CE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2221899F1EDC03F000448CE8 /* Assets.xcassets */; };
 		222189A31EDC03F000448CE8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 222189A11EDC03F000448CE8 /* LaunchScreen.storyboard */; };
-		222189B01EDC04F500448CE8 /* ResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 222189AE1EDC04F500448CE8 /* ResultsViewController.m */; };
-		222189B11EDC04F500448CE8 /* ResultsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 222189AF1EDC04F500448CE8 /* ResultsViewController.xib */; };
+		222189B91EDC0CD200448CE8 /* ResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 222189B71EDC0CD200448CE8 /* ResultsViewController.m */; };
+		222189BA1EDC0CD200448CE8 /* ResultsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 222189B81EDC0CD200448CE8 /* ResultsViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,9 +23,9 @@
 		2221899F1EDC03F000448CE8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		222189A21EDC03F000448CE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		222189A41EDC03F000448CE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		222189AD1EDC04F500448CE8 /* ResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ResultsViewController.h; path = Controller/ResultsViewController.h; sourceTree = "<group>"; };
-		222189AE1EDC04F500448CE8 /* ResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ResultsViewController.m; path = Controller/ResultsViewController.m; sourceTree = "<group>"; };
-		222189AF1EDC04F500448CE8 /* ResultsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ResultsViewController.xib; path = Controller/ResultsViewController.xib; sourceTree = "<group>"; };
+		222189B61EDC0CD200448CE8 /* ResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ResultsViewController.h; path = Controller/ResultsViewController.h; sourceTree = "<group>"; };
+		222189B71EDC0CD200448CE8 /* ResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ResultsViewController.m; path = Controller/ResultsViewController.m; sourceTree = "<group>"; };
+		222189B81EDC0CD200448CE8 /* ResultsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ResultsViewController.xib; path = Controller/ResultsViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,9 +104,9 @@
 		222189B21EDC050000448CE8 /* ResultsVC */ = {
 			isa = PBXGroup;
 			children = (
-				222189AD1EDC04F500448CE8 /* ResultsViewController.h */,
-				222189AE1EDC04F500448CE8 /* ResultsViewController.m */,
-				222189AF1EDC04F500448CE8 /* ResultsViewController.xib */,
+				222189B61EDC0CD200448CE8 /* ResultsViewController.h */,
+				222189B71EDC0CD200448CE8 /* ResultsViewController.m */,
+				222189B81EDC0CD200448CE8 /* ResultsViewController.xib */,
 			);
 			name = ResultsVC;
 			sourceTree = "<group>";
@@ -170,7 +170,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				222189B11EDC04F500448CE8 /* ResultsViewController.xib in Resources */,
+				222189BA1EDC0CD200448CE8 /* ResultsViewController.xib in Resources */,
 				222189A31EDC03F000448CE8 /* LaunchScreen.storyboard in Resources */,
 				222189A01EDC03F000448CE8 /* Assets.xcassets in Resources */,
 			);
@@ -183,7 +183,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				222189B01EDC04F500448CE8 /* ResultsViewController.m in Sources */,
+				222189B91EDC0CD200448CE8 /* ResultsViewController.m in Sources */,
 				222189981EDC03F000448CE8 /* AppDelegate.m in Sources */,
 				222189951EDC03F000448CE8 /* main.m in Sources */,
 			);
