@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  ResultsViewController.h
 //  RESTingInObjective-C
 //
 //  Created by Fabijan Bajo on 29/05/2017.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface ResultsViewController : UIViewController
 
 @end
-

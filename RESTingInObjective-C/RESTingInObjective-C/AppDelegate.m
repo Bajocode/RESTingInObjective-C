@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "ResultsViewController.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +17,16 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    // Instantiate root VC
+    ResultsViewController *resultsVC = [[ResultsViewController alloc] init];
+    UINavigationController *navC = [[UINavigationController alloc] initWithRootViewController:resultsVC];
+    
+    // Initialize window
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.rootViewController = navC;
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
