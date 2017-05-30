@@ -24,7 +24,7 @@ const NSString *apiKey = @"a6d819499131071f158fd740860a5a88";
     __strong static FlickrAPI *_sharedObject = nil;
     // Initialize once
     dispatch_once(&pred, ^{
-        _sharedObject = [[self alloc] init];
+        _sharedObject = [[self alloc] initPrivate];
     });
     return _sharedObject;
 }
@@ -40,6 +40,20 @@ const NSString *apiKey = @"a6d819499131071f158fd740860a5a88";
     return _formatter;
 }
 
+
+#pragma mark - Initializers
+
+- (instancetype)initPrivate {
+    self = [super init];
+    if (self) {
+        // Setup
+    }
+    return self;
+}
+- (instancetype)init {
+    @throw [NSException exceptionWithName:@"Singleton" reason:@"Use sharedInstance" userInfo:nil];
+    return nil;
+}
 
 #pragma mark - Methods
 
