@@ -13,8 +13,8 @@
 
 #pragma mark - Constants
 
-const NSString *baseURLString = @"https://api.flickr.com/services/rest";
-const NSString *apiKey = @"a6d819499131071f158fd740860a5a88";
+NSString *const baseURLString = @"https://api.flickr.com/services/rest";
+NSString *const apiKey = @"a6d819499131071f158fd740860a5a88";
 
 
 #pragma mark - Properties
@@ -40,6 +40,9 @@ const NSString *apiKey = @"a6d819499131071f158fd740860a5a88";
     return _formatter;
 }
 
+- (NSURL *)interestingPhotosURL {
+    return [[FlickrAPI sharedInstance] flickrURL:@"flickr.interestingness.getList" parameters:@{@"extras": @"url_h,date_taken"}];
+}
 
 #pragma mark - Initializers
 
@@ -55,7 +58,36 @@ const NSString *apiKey = @"a6d819499131071f158fd740860a5a88";
     return nil;
 }
 
+
 #pragma mark - Methods
+
+// Private
+- (NSURL *)flickrURL:(NSString *)method parameters:(NSDictionary *)extraParams {
+    NSURLComponents *components = [[NSURLComponents alloc] initWithString:baseURLString];
+    NSMutableArray *queryItems = [[NSMutableArray alloc] init];
+    
+    // base params for every flickr method
+    NSDictionary *baseParams = @{ @"method": method,
+                                  @"format": @"json",
+                                  @"nojsoncallback": @"1",
+                                  @"api_key": apiKey };
+    [baseParams enumerateKeysAndObjectsUsingBlock:^(id key, id value, BOOL *stop) {
+        NSURLQueryItem *item = [[NSURLQueryItem alloc] initWithName:key value:value];
+        [queryItems addObject:item];
+    }];
+    
+    // Additional params specific to certain method
+    if (extraParams) {
+        [extraParams enumerateKeysAndObjectsUsingBlock:^(id key, id value, BOOL *stop) {
+            NSURLQueryItem *item = [[NSURLQueryItem alloc] initWithName:key value:value];
+            [queryItems addObject:item];
+        }];
+    }
+    
+    // Return constructed url
+    components.queryItems = queryItems;
+    return components.URL;
+}
 
 
 

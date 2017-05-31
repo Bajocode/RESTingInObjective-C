@@ -11,5 +11,6 @@
 @interface FlickrAPI : NSObject
 
 + (FlickrAPI *)sharedInstance;
-
+- (NSURL *)interestingPhotosURL;
+@property (nonatomic, readonly) NSURL *interestingPhotosURL;
 @end
