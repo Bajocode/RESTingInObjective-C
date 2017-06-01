@@ -7,6 +7,7 @@
 //
 
 #import "FBFlickrAPI.h"
+#import "FBPhoto.h"
 
 @implementation FBFlickrAPI
 
@@ -61,10 +62,28 @@ NSString *const apiKey = @"a6d819499131071f158fd740860a5a88";
 #pragma mark - Methods
 
 // Public
-
+- (void)photoObjectsFromJson:(NSData *)data completion:(void (^)(NSDictionary *, NSError *))callback {
+    
+}
 
 // Private
 
+// Parse individual photo object
+- (FBPhoto *)photoFrom:(NSDictionary *)jsonDict {
+    NSDate *date = [[self formatter] dateFromString:jsonDict[@"datetaken"]];
+    NSString *title = jsonDict[@"title"];
+    NSString *photoID = jsonDict[@"id"];
+    NSString *urlString = jsonDict[@"url_h"];
+    NSURL *url = [[NSURL alloc] initWithString:urlString];
+    FBPhoto *photo = [[FBPhoto alloc] initWithTitle:title photoID:photoID dateTaken:date remoteURL:url];
+    // Return photo object if parsing succeeds
+    if (photo) {
+        return photo;
+    } else {
+        NSLog(@"Parsing photo object for title: %@, failed", title);
+        return nil;
+    }
+}
 
 
 // Flickr NSURL constructor

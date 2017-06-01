@@ -12,5 +12,7 @@
 
 + (FBFlickrAPI *)sharedInstance;
 - (NSURL *)interestingPhotosURL;
+- (void)photoObjectsFromJson:(NSData *)data
+                  completion:(void (^)(NSDictionary*,NSError*))callback;
 @property (nonatomic, readonly) NSURL *interestingPhotosURL;
 @end
