@@ -1,16 +1,16 @@
 //
-//  FlickrAPI.h
+//  FBFlickrAPI.h
 //  RESTingInObjective-C
 //
-//  Created by Fabijan Bajo on 30/05/2017.
+//  Created by Fabijan Bajo on 01/06/2017.
 //  Copyright © 2017 Fabijan Bajo. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
-@interface FlickrAPI : NSObject
+@interface FBFlickrAPI : NSObject
 
-+ (FlickrAPI *)sharedInstance;
++ (FBFlickrAPI *)sharedInstance;
 - (NSURL *)interestingPhotosURL;
 @property (nonatomic, readonly) NSURL *interestingPhotosURL;
 @end

@@ -11,9 +11,9 @@
 		222189981EDC03F000448CE8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 222189971EDC03F000448CE8 /* AppDelegate.m */; };
 		222189A01EDC03F000448CE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2221899F1EDC03F000448CE8 /* Assets.xcassets */; };
 		222189A31EDC03F000448CE8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 222189A11EDC03F000448CE8 /* LaunchScreen.storyboard */; };
-		222189B91EDC0CD200448CE8 /* ResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 222189B71EDC0CD200448CE8 /* ResultsViewController.m */; };
-		222189BA1EDC0CD200448CE8 /* ResultsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 222189B81EDC0CD200448CE8 /* ResultsViewController.xib */; };
-		225A4CF21EDD54DD0067D4FD /* FlickrAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 225A4CF11EDD54DD0067D4FD /* FlickrAPI.m */; };
+		22858A221EE03E30008FA012 /* FBResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22858A201EE03E30008FA012 /* FBResultsViewController.m */; };
+		22858A231EE03E30008FA012 /* FBResultsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22858A211EE03E30008FA012 /* FBResultsViewController.xib */; };
+		22858A261EE03E67008FA012 /* FBFlickrAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 22858A251EE03E67008FA012 /* FBFlickrAPI.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,11 +24,11 @@
 		2221899F1EDC03F000448CE8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		222189A21EDC03F000448CE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		222189A41EDC03F000448CE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		222189B61EDC0CD200448CE8 /* ResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ResultsViewController.h; path = Controller/ResultsViewController.h; sourceTree = "<group>"; };
-		222189B71EDC0CD200448CE8 /* ResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ResultsViewController.m; path = Controller/ResultsViewController.m; sourceTree = "<group>"; };
-		222189B81EDC0CD200448CE8 /* ResultsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ResultsViewController.xib; path = Controller/ResultsViewController.xib; sourceTree = "<group>"; };
-		225A4CF01EDD54DD0067D4FD /* FlickrAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FlickrAPI.h; path = Model/FlickrAPI.h; sourceTree = "<group>"; };
-		225A4CF11EDD54DD0067D4FD /* FlickrAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FlickrAPI.m; path = Model/FlickrAPI.m; sourceTree = "<group>"; };
+		22858A1F1EE03E30008FA012 /* FBResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBResultsViewController.h; path = Controller/FBResultsViewController.h; sourceTree = "<group>"; };
+		22858A201EE03E30008FA012 /* FBResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FBResultsViewController.m; path = Controller/FBResultsViewController.m; sourceTree = "<group>"; };
+		22858A211EE03E30008FA012 /* FBResultsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FBResultsViewController.xib; path = Controller/FBResultsViewController.xib; sourceTree = "<group>"; };
+		22858A241EE03E67008FA012 /* FBFlickrAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBFlickrAPI.h; path = Model/FBFlickrAPI.h; sourceTree = "<group>"; };
+		22858A251EE03E67008FA012 /* FBFlickrAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FBFlickrAPI.m; path = Model/FBFlickrAPI.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,8 +93,8 @@
 		222189AB1EDC04AA00448CE8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				225A4CF01EDD54DD0067D4FD /* FlickrAPI.h */,
-				225A4CF11EDD54DD0067D4FD /* FlickrAPI.m */,
+				22858A241EE03E67008FA012 /* FBFlickrAPI.h */,
+				22858A251EE03E67008FA012 /* FBFlickrAPI.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -109,9 +109,9 @@
 		222189B21EDC050000448CE8 /* ResultsVC */ = {
 			isa = PBXGroup;
 			children = (
-				222189B61EDC0CD200448CE8 /* ResultsViewController.h */,
-				222189B71EDC0CD200448CE8 /* ResultsViewController.m */,
-				222189B81EDC0CD200448CE8 /* ResultsViewController.xib */,
+				22858A1F1EE03E30008FA012 /* FBResultsViewController.h */,
+				22858A201EE03E30008FA012 /* FBResultsViewController.m */,
+				22858A211EE03E30008FA012 /* FBResultsViewController.xib */,
 			);
 			name = ResultsVC;
 			sourceTree = "<group>";
@@ -175,7 +175,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				222189BA1EDC0CD200448CE8 /* ResultsViewController.xib in Resources */,
+				22858A231EE03E30008FA012 /* FBResultsViewController.xib in Resources */,
 				222189A31EDC03F000448CE8 /* LaunchScreen.storyboard in Resources */,
 				222189A01EDC03F000448CE8 /* Assets.xcassets in Resources */,
 			);
@@ -188,10 +188,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				222189B91EDC0CD200448CE8 /* ResultsViewController.m in Sources */,
 				222189981EDC03F000448CE8 /* AppDelegate.m in Sources */,
+				22858A221EE03E30008FA012 /* FBResultsViewController.m in Sources */,
 				222189951EDC03F000448CE8 /* main.m in Sources */,
-				225A4CF21EDD54DD0067D4FD /* FlickrAPI.m in Sources */,
+				22858A261EE03E67008FA012 /* FBFlickrAPI.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

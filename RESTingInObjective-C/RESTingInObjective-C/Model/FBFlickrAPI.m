@@ -1,15 +1,14 @@
 //
-//  FlickrAPI.m
+//  FBFlickrAPI.m
 //  RESTingInObjective-C
 //
-//  Created by Fabijan Bajo on 30/05/2017.
+//  Created by Fabijan Bajo on 01/06/2017.
 //  Copyright © 2017 Fabijan Bajo. All rights reserved.
 //
 
-#import "FlickrAPI.h"
+#import "FBFlickrAPI.h"
 
-
-@implementation FlickrAPI
+@implementation FBFlickrAPI
 
 #pragma mark - Constants
 
@@ -19,9 +18,9 @@ NSString *const apiKey = @"a6d819499131071f158fd740860a5a88";
 
 #pragma mark - Properties
 
-+ (FlickrAPI *)sharedInstance {
++ (FBFlickrAPI *)sharedInstance {
     static dispatch_once_t pred = 0;
-    __strong static FlickrAPI *_sharedObject = nil;
+    __strong static FBFlickrAPI *_sharedObject = nil;
     // Initialize once
     dispatch_once(&pred, ^{
         _sharedObject = [[self alloc] initPrivate];
@@ -41,7 +40,7 @@ NSString *const apiKey = @"a6d819499131071f158fd740860a5a88";
 }
 
 - (NSURL *)interestingPhotosURL {
-    return [[FlickrAPI sharedInstance] flickrURL:@"flickr.interestingness.getList" parameters:@{@"extras": @"url_h,date_taken"}];
+    return [[FBFlickrAPI sharedInstance] flickrURL:@"flickr.interestingness.getList" parameters:@{@"extras": @"url_h,date_taken"}];
 }
 
 #pragma mark - Initializers
@@ -61,7 +60,14 @@ NSString *const apiKey = @"a6d819499131071f158fd740860a5a88";
 
 #pragma mark - Methods
 
+// Public
+
+
 // Private
+
+
+
+// Flickr NSURL constructor
 - (NSURL *)flickrURL:(NSString *)method parameters:(NSDictionary *)extraParams {
     NSURLComponents *components = [[NSURLComponents alloc] initWithString:baseURLString];
     NSMutableArray *queryItems = [[NSMutableArray alloc] init];

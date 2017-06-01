@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "ResultsViewController.h"
+#import "FBResultsViewController.h"
 
 @interface AppDelegate ()
 
@@ -18,7 +18,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Instantiate root VC
-    ResultsViewController *resultsVC = [[ResultsViewController alloc] init];
+    FBResultsViewController *resultsVC = [[FBResultsViewController alloc] init];
     UINavigationController *navC = [[UINavigationController alloc] initWithRootViewController:resultsVC];
     
     // Initialize window
