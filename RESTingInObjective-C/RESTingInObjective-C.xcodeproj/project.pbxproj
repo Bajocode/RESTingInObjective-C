@@ -85,7 +85,7 @@
 		222189AA1EDC04A400448CE8 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				222189B21EDC050000448CE8 /* ResultsVC */,
+				222189B21EDC050000448CE8 /* FBResultsVC */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -106,14 +106,14 @@
 			name = View;
 			sourceTree = "<group>";
 		};
-		222189B21EDC050000448CE8 /* ResultsVC */ = {
+		222189B21EDC050000448CE8 /* FBResultsVC */ = {
 			isa = PBXGroup;
 			children = (
 				22858A1F1EE03E30008FA012 /* FBResultsViewController.h */,
 				22858A201EE03E30008FA012 /* FBResultsViewController.m */,
 				22858A211EE03E30008FA012 /* FBResultsViewController.xib */,
 			);
-			name = ResultsVC;
+			name = FBResultsVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
