@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+@class PhotoStore;
 
 @interface FBResultsViewController : UIViewController
+
+@property(nonatomic)PhotoStore *photoStore;
 
 @end

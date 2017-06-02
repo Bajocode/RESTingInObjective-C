@@ -7,7 +7,7 @@
 //
 
 #import "FBResultsViewController.h"
-#import "FBFlickrAPI.h"
+#import "PhotoStore.h"
 
 @interface FBResultsViewController ()
 
@@ -20,8 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // https://api.flickr.com/services/rest?nojsoncallback=1&method=flickr.interestingness.getList&api_key=a6d819499131071f158fd740860a5a88&format=json&extras=url_h,date_taken
-    NSLog(@"URL: %@", [[FBFlickrAPI sharedInstance] interestingPhotosURL]);
+    [_photoStore fetchInterestingPhotos];
 }
 
 @end

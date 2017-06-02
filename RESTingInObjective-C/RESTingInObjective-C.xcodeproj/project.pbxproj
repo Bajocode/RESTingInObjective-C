@@ -15,6 +15,7 @@
 		22858A221EE03E30008FA012 /* FBResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22858A201EE03E30008FA012 /* FBResultsViewController.m */; };
 		22858A231EE03E30008FA012 /* FBResultsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22858A211EE03E30008FA012 /* FBResultsViewController.xib */; };
 		22858A261EE03E67008FA012 /* FBFlickrAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 22858A251EE03E67008FA012 /* FBFlickrAPI.m */; };
+		22DA27461EE1A53800D14D23 /* PhotoStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DA27451EE1A53800D14D23 /* PhotoStore.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,8 @@
 		22858A211EE03E30008FA012 /* FBResultsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FBResultsViewController.xib; path = Controller/FBResultsViewController.xib; sourceTree = "<group>"; };
 		22858A241EE03E67008FA012 /* FBFlickrAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBFlickrAPI.h; path = Model/FBFlickrAPI.h; sourceTree = "<group>"; };
 		22858A251EE03E67008FA012 /* FBFlickrAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FBFlickrAPI.m; path = Model/FBFlickrAPI.m; sourceTree = "<group>"; };
+		22DA27441EE1A53800D14D23 /* PhotoStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PhotoStore.h; path = Model/PhotoStore.h; sourceTree = "<group>"; };
+		22DA27451EE1A53800D14D23 /* PhotoStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PhotoStore.m; path = Model/PhotoStore.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +103,8 @@
 				223EE9D11EE053B1007F4B40 /* FBPhoto.m */,
 				22858A241EE03E67008FA012 /* FBFlickrAPI.h */,
 				22858A251EE03E67008FA012 /* FBFlickrAPI.m */,
+				22DA27441EE1A53800D14D23 /* PhotoStore.h */,
+				22DA27451EE1A53800D14D23 /* PhotoStore.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -197,6 +202,7 @@
 				22858A221EE03E30008FA012 /* FBResultsViewController.m in Sources */,
 				222189951EDC03F000448CE8 /* main.m in Sources */,
 				22858A261EE03E67008FA012 /* FBFlickrAPI.m in Sources */,
+				22DA27461EE1A53800D14D23 /* PhotoStore.m in Sources */,
 				223EE9D21EE053B1007F4B40 /* FBPhoto.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
