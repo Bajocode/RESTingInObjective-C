@@ -62,8 +62,17 @@ NSString *const apiKey = @"a6d819499131071f158fd740860a5a88";
 #pragma mark - Methods
 
 // Public
-- (void)photoObjectsFromJson:(NSData *)data completion:(void (^)(NSDictionary *, NSError *))callback {
-    
+- (void)photoObjectsFromJson:(NSData *)data completionHandler:(void (^)(NSDictionary *, NSError *))completion {
+    // Pass error by reference to save error at given mem address
+    NSError *error;
+    NSDictionary *jsonFoundationObject = [NSJSONSerialization JSONObjectWithData:data
+                                    options:NSJSONReadingMutableContainers
+                                      error:&error];
+    if (jsonFoundationObject) {
+        completion(jsonFoundationObject, nil);
+    } else {
+        completion(nil, error);
+    }
 }
 
 // Private
