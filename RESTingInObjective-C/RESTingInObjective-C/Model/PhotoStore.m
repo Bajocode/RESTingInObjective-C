@@ -28,6 +28,7 @@
 
 #pragma mark - Methods
 
+// Test Impl
 - (void)fetchInterestingPhotos {
     NSURL *url = [[FBFlickrAPI sharedInstance] interestingPhotosURL];
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
