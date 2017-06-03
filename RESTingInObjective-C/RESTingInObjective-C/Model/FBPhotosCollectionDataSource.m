@@ -7,7 +7,6 @@
 //
 
 #import "FBPhotosCollectionDataSource.h"
-
 #import "FBPhotoCollectionViewCell.h"
 
 NSString *const cellID = @"PhotoCell";
@@ -18,7 +17,7 @@ NSString *const cellID = @"PhotoCell";
 @implementation FBPhotosCollectionDataSource
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return [[self photos] count];
+    return [self.photos count];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {

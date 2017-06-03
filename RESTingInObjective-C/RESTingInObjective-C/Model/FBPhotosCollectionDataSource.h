@@ -10,6 +10,6 @@
 
 @interface FBPhotosCollectionDataSource : NSObject <UICollectionViewDataSource>
 
-@property (nonatomic, copy)NSMutableArray *photos;
+@property (nonatomic, copy)NSArray *photos;
 
 @end

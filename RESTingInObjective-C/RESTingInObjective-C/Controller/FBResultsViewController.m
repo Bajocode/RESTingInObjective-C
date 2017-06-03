@@ -43,7 +43,7 @@
 - (void)fetchInterestingPhotos {
     [[self photoStore] fetchInterestingPhotosWithCompletionHandler:^(NSArray *photos, NSError *error) {
         if (error == nil) {
-            [self.dataSource.photos addObjectsFromArray:photos];
+            self.dataSource.photos = photos;
         } else {
             NSLog(@"%@", error);
         }
