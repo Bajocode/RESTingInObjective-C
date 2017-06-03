@@ -14,10 +14,17 @@
 #pragma mark - Initializers
 
 - (instancetype)initWithTitle:(NSString *)title photoID:(NSString *)photoID dateTaken:(NSDate *)date remoteURL:(NSURL *)url {
-    return [self initWithTitle:title
-                       photoID:photoID
-                     dateTaken:date
-                     remoteURL:url];
+    // Call super designated
+    self = [super init];
+    
+    // If super init succeeds
+    if (self) {
+        _title = title;
+        _photoID = photoID;
+        _dateTaken = date;
+        _remoteURL = url;
+    }
+    return self;
 }
 
 

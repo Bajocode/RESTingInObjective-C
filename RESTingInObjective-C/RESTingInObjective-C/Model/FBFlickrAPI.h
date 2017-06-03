@@ -13,6 +13,6 @@
 + (FBFlickrAPI *)sharedInstance;
 - (NSURL *)interestingPhotosURL;
 - (void)photoObjectsFromJson:(NSData *)data
-                  completionHandler:(void (^)(NSDictionary*,NSError*))completion;
+                  completionHandler:(void (^)(NSArray*,NSError*))completion;
 @property (nonatomic, readonly) NSURL *interestingPhotosURL;
 @end

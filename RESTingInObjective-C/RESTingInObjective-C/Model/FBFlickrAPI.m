@@ -35,7 +35,7 @@ NSString *const apiKey = @"a6d819499131071f158fd740860a5a88";
     // Initialize once
     dispatch_once(&pred, ^{
         _formatter = [[NSDateFormatter alloc] init];
-        _formatter.dateFormat = @"";
+        _formatter.dateFormat = @"yyyy-MM-dd HH:mm:ss";
     });
     return _formatter;
 }
@@ -62,18 +62,41 @@ NSString *const apiKey = @"a6d819499131071f158fd740860a5a88";
 #pragma mark - Methods
 
 // Public
-- (void)photoObjectsFromJson:(NSData *)data completionHandler:(void (^)(NSDictionary *, NSError *))completion {
+- (void)photoObjectsFromJson:(NSData *)data completionHandler:(void (^)(NSArray *, NSError *))completion {
     // Pass error by reference to save error at given mem address
     NSError *error;
     NSDictionary *jsonFoundationObject = [NSJSONSerialization JSONObjectWithData:data
                                     options:NSJSONReadingMutableContainers
                                       error:&error];
-    if (jsonFoundationObject) {
-        completion(jsonFoundationObject, nil);
+    
+    // Check if serializaion succeeded
+    if (error == nil) {
+        NSDictionary *photosJSONDict = jsonFoundationObject[@"photos"];
+        NSArray *photosJSONArray = photosJSONDict[@"photo"];
+        
+        NSMutableArray *photoObjects = [[NSMutableArray alloc] init];
+        for (NSDictionary *object in photosJSONArray) {
+            if (object[@"url_h"]){
+                FBPhoto *photo = [self photoFrom:object];
+                if (photo) {
+                    [photoObjects addObject:photo];
+                } else {
+                    NSLog(@"photoObjectsFromJson error");
+                }
+            }
+            
+        }
+        if ([photoObjects count] == 0 && [photosJSONArray count] != 0) {
+            // We weren't able to parse any of the photos.
+            // Maybe the JSON format for photos has changed.
+            NSLog(@"[photoObjects count] == 0 && [photosJSONArray count] != 0");
+        }
+        completion(photoObjects, nil);
     } else {
         completion(nil, error);
     }
 }
+
 
 // Private
 

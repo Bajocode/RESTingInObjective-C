@@ -7,7 +7,7 @@
 //
 
 #import "FBResultsViewController.h"
-#import "PhotoStore.h"
+#import "FBPhotoStore.h"
 
 @interface FBResultsViewController ()
 
@@ -20,7 +20,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [_photoStore fetchInterestingPhotos];
+    [[self photoStore] fetchInterestingPhotosWithCompletionHandler:^(NSArray *photos, NSError *error) {
+        if (error) {
+            NSLog(@"%@", error);
+        } else {
+            NSLog(@"%lu", (unsigned long)[photos count]);
+        }
+        
+    }];
 }
 
 @end
