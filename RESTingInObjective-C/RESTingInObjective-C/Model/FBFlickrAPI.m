@@ -87,7 +87,7 @@ NSString *const apiKey = @"a6d819499131071f158fd740860a5a88";
             
         }
         if ([photoObjects count] == 0 && [photosJSONArray count] != 0) {
-            // We weren't able to parse any of the photos.
+            // Weren't able to parse any of the photos.
             // Maybe the JSON format for photos has changed.
             NSLog(@"[photoObjects count] == 0 && [photosJSONArray count] != 0");
         }

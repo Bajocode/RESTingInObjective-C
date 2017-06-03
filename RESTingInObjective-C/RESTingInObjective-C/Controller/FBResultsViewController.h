@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 @class FBPhotoStore;
 
-@interface FBResultsViewController : UIViewController
+@interface FBResultsViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate>
 
 @property(nonatomic)FBPhotoStore *photoStore;
 

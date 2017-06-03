@@ -8,8 +8,12 @@
 
 #import "FBResultsViewController.h"
 #import "FBPhotoStore.h"
+#import "FBPhotoCollectionViewCell.h"
 
 @interface FBResultsViewController ()
+
+@property (nonatomic, weak) IBOutlet UICollectionView *collectionView;
+@property (nonatomic)
 
 @end
 
@@ -28,6 +32,20 @@
         }
         
     }];
+}
+
+#pragma mark - Methods
+
+- (void)configure {
+    // CollectionView
+    [self.collectionView registerClass:[FBPhotoCollectionViewCell class] forCellWithReuseIdentifier:@"PhotoCell"];
+}
+
+
+#pragma mark: - UICollectionViewDataSource
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return
 }
 
 @end
