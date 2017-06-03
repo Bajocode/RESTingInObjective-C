@@ -9,11 +9,12 @@
 #import "FBResultsViewController.h"
 #import "FBPhotoStore.h"
 #import "FBPhotoCollectionViewCell.h"
+#import "FBPhotosCollectionDataSource.h"
 
 @interface FBResultsViewController ()
 
 @property (nonatomic, weak) IBOutlet UICollectionView *collectionView;
-@property (nonatomic)
+@property (nonatomic) FBPhotosCollectionDataSource *dataSource;
 
 @end
 
@@ -24,28 +25,35 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [[self photoStore] fetchInterestingPhotosWithCompletionHandler:^(NSArray *photos, NSError *error) {
-        if (error) {
-            NSLog(@"%@", error);
-        } else {
-            NSLog(@"%lu", (unsigned long)[photos count]);
-        }
-        
-    }];
+    
+    [self configure];
+    [self fetchInterestingPhotos];
 }
 
 #pragma mark - Methods
 
 - (void)configure {
     // CollectionView
+    self.collectionView.delegate = self;
+    self.dataSource = [[FBPhotosCollectionDataSource alloc] init];
+    self.collectionView.dataSource = self.dataSource;
     [self.collectionView registerClass:[FBPhotoCollectionViewCell class] forCellWithReuseIdentifier:@"PhotoCell"];
 }
 
-
-#pragma mark: - UICollectionViewDataSource
-
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return
+- (void)fetchInterestingPhotos {
+    [[self photoStore] fetchInterestingPhotosWithCompletionHandler:^(NSArray *photos, NSError *error) {
+        if (error == nil) {
+            [self.dataSource.photos addObjectsFromArray:photos];
+        } else {
+            NSLog(@"%@", error);
+        }
+        [self.collectionView reloadSections:[[NSIndexSet alloc] initWithIndex:0]];
+    }];
 }
 
+#pragma mark: - UICollectionViewDelegate
+
+- (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+}
 @end

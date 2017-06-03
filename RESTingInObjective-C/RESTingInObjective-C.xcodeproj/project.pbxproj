@@ -18,7 +18,7 @@
 		22A617CD1EE3353D00E22878 /* FBPhotoStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A617CC1EE3353D00E22878 /* FBPhotoStore.m */; };
 		22A617D11EE352EB00E22878 /* FBPhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A617CF1EE352EB00E22878 /* FBPhotoCollectionViewCell.m */; };
 		22A617D21EE352EB00E22878 /* FBPhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22A617D01EE352EB00E22878 /* FBPhotoCollectionViewCell.xib */; };
-		22A617D61EE35A5900E22878 /* PhotosCollectionDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A617D51EE35A5900E22878 /* PhotosCollectionDataSource.m */; };
+		22A617DA1EE35C5A00E22878 /* FBPhotosCollectionDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A617D91EE35C5A00E22878 /* FBPhotosCollectionDataSource.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,8 +41,8 @@
 		22A617CE1EE352EB00E22878 /* FBPhotoCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBPhotoCollectionViewCell.h; path = Controller/FBPhotoCollectionViewCell.h; sourceTree = "<group>"; };
 		22A617CF1EE352EB00E22878 /* FBPhotoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FBPhotoCollectionViewCell.m; path = Controller/FBPhotoCollectionViewCell.m; sourceTree = "<group>"; };
 		22A617D01EE352EB00E22878 /* FBPhotoCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FBPhotoCollectionViewCell.xib; path = Controller/FBPhotoCollectionViewCell.xib; sourceTree = "<group>"; };
-		22A617D41EE35A5900E22878 /* PhotosCollectionDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PhotosCollectionDataSource.h; path = Model/PhotosCollectionDataSource.h; sourceTree = "<group>"; };
-		22A617D51EE35A5900E22878 /* PhotosCollectionDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PhotosCollectionDataSource.m; path = Model/PhotosCollectionDataSource.m; sourceTree = "<group>"; };
+		22A617D81EE35C5A00E22878 /* FBPhotosCollectionDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBPhotosCollectionDataSource.h; path = Model/FBPhotosCollectionDataSource.h; sourceTree = "<group>"; };
+		22A617D91EE35C5A00E22878 /* FBPhotosCollectionDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FBPhotosCollectionDataSource.m; path = Model/FBPhotosCollectionDataSource.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,8 +165,8 @@
 		22A617D71EE35A5F00E22878 /* PhotosDataSource */ = {
 			isa = PBXGroup;
 			children = (
-				22A617D41EE35A5900E22878 /* PhotosCollectionDataSource.h */,
-				22A617D51EE35A5900E22878 /* PhotosCollectionDataSource.m */,
+				22A617D81EE35C5A00E22878 /* FBPhotosCollectionDataSource.h */,
+				22A617D91EE35C5A00E22878 /* FBPhotosCollectionDataSource.m */,
 			);
 			name = PhotosDataSource;
 			sourceTree = "<group>";
@@ -246,8 +246,8 @@
 			files = (
 				222189981EDC03F000448CE8 /* AppDelegate.m in Sources */,
 				22858A221EE03E30008FA012 /* FBResultsViewController.m in Sources */,
+				22A617DA1EE35C5A00E22878 /* FBPhotosCollectionDataSource.m in Sources */,
 				222189951EDC03F000448CE8 /* main.m in Sources */,
-				22A617D61EE35A5900E22878 /* PhotosCollectionDataSource.m in Sources */,
 				22A617CD1EE3353D00E22878 /* FBPhotoStore.m in Sources */,
 				22A617D11EE352EB00E22878 /* FBPhotoCollectionViewCell.m in Sources */,
 				22858A261EE03E67008FA012 /* FBFlickrAPI.m in Sources */,

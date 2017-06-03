@@ -28,7 +28,7 @@
 
 #pragma mark - Methods
 
-// Test Impl
+// Fetch interesting photo
 - (void)fetchInterestingPhotosWithCompletionHandler:(void (^)(NSArray*, NSError *))completion {
     NSURL *url = [[FBFlickrAPI sharedInstance] interestingPhotosURL];
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
