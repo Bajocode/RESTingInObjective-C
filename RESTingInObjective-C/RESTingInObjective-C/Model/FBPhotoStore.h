@@ -6,7 +6,8 @@
 //  Copyright © 2017 Fabijan Bajo. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+@class FBPhoto;
 
 @interface FBPhotoStore : NSObject
 
@@ -14,5 +15,6 @@
 #pragma mark: - Methods
 
 - (void)fetchInterestingPhotosWithCompletionHandler:(void (^)(NSArray*, NSError *))completion;
+- (void)fetchImageForPhoto:(FBPhoto *)photo completionHandler:(void (^)(UIImage*, NSError *))completion;
 
 @end

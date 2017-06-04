@@ -10,4 +10,6 @@
 
 @interface FBPhotoCollectionViewCell : UICollectionViewCell
 
+- (void) updateWithImage:(UIImage*)image;
+
 @end

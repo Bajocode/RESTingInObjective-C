@@ -11,6 +11,7 @@
 #import "FBPhotoCollectionViewCell.h"
 #import "FBPhotosCollectionDataSource.h"
 
+NSString *const cellId = @"PhotoCell";
 @interface FBResultsViewController ()
 
 @property (nonatomic, weak) IBOutlet UICollectionView *collectionView;
@@ -30,18 +31,20 @@
     [self fetchInterestingPhotos];
 }
 
+
 #pragma mark - Methods
 
 - (void)configure {
     // CollectionView
     self.collectionView.delegate = self;
-    self.dataSource = [[FBPhotosCollectionDataSource alloc] init];
+    self.dataSource = [[FBPhotosCollectionDataSource alloc] initWithPhotoStore:[[FBPhotoStore alloc]init]];
     self.collectionView.dataSource = self.dataSource;
-    [self.collectionView registerClass:[FBPhotoCollectionViewCell class] forCellWithReuseIdentifier:@"PhotoCell"];
+    UINib *cellNib = [UINib nibWithNibName:@"FBPhotoCollectionViewCell" bundle:nil];
+    [self.collectionView registerNib:cellNib forCellWithReuseIdentifier:cellId];
 }
 
 - (void)fetchInterestingPhotos {
-    [[self photoStore] fetchInterestingPhotosWithCompletionHandler:^(NSArray *photos, NSError *error) {
+    [self.dataSource.photoStore fetchInterestingPhotosWithCompletionHandler:^(NSArray *photos, NSError *error) {
         if (error == nil) {
             self.dataSource.photos = photos;
         } else {
@@ -51,9 +54,4 @@
     }];
 }
 
-#pragma mark: - UICollectionViewDelegate
-
-- (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
-    
-}
 @end

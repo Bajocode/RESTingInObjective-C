@@ -20,16 +20,25 @@
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="I3o-OI-j4Y">
                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </imageView>
+                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="bCe-gQ-Efz">
+                        <rect key="frame" x="15" y="15" width="20" height="20"/>
+                    </activityIndicatorView>
                 </subviews>
             </view>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="I3o-OI-j4Y" secondAttribute="trailing" id="CyA-M0-Mtg"/>
                 <constraint firstAttribute="bottom" secondItem="I3o-OI-j4Y" secondAttribute="bottom" id="G3w-0o-h7s"/>
+                <constraint firstItem="bCe-gQ-Efz" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="L9K-pW-Tj8"/>
                 <constraint firstItem="I3o-OI-j4Y" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="mvK-mv-l7h"/>
+                <constraint firstItem="bCe-gQ-Efz" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="xrh-i4-ER5"/>
                 <constraint firstItem="I3o-OI-j4Y" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="zGi-2X-edy"/>
             </constraints>
+            <connections>
+                <outlet property="spinner" destination="bCe-gQ-Efz" id="Pxt-eA-vUi"/>
+                <outlet property="thumbImageView" destination="I3o-OI-j4Y" id="K2r-Qq-vN9"/>
+            </connections>
         </collectionViewCell>
     </objects>
 </document>

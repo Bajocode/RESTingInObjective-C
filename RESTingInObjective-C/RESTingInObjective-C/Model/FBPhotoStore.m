@@ -8,6 +8,7 @@
 
 #import "FBPhotoStore.h"
 #import "FBFlickrAPI.h"
+#import "FBPhoto.h"
 
 @implementation FBPhotoStore
 
@@ -27,6 +28,48 @@
 
 
 #pragma mark - Methods
+
+// Fetch image for photo
+- (void)fetchImageForPhoto:(FBPhoto *)photo completionHandler:(void (^)(UIImage*, NSError *))completion {
+    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:photo.remoteURL];
+    NSURLSessionDataTask *dataTask = [[self session] dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        [self processImageRequestWithData:data urlResponse:response error:error completionHandler:^(UIImage *image, NSError *error) {
+            // Dispatch back on main, pass image
+            dispatch_async(dispatch_get_main_queue(), ^{
+                
+                if (error) {
+                    completion(nil, error);
+                } else {
+                    completion(image, nil);
+                }
+            });
+        }];
+    }];
+    [dataTask resume];
+}
+
+// Process HTTP image response
+- (void)processImageRequestWithData:(NSData*)data
+                                    urlResponse:(NSURLResponse *)response
+                                          error:(NSError*)error
+                              completionHandler:(void (^)(UIImage*, NSError *))processCompletion {
+    if (data == nil) {
+        processCompletion(nil, error);
+    }
+    // Cast into http response
+    NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
+    if (httpResponse.statusCode == 200) {
+        UIImage *image = [UIImage imageWithData:data];
+        if (image) {
+            processCompletion(image, nil);
+        } else {
+            NSLog(@"Could not convert imagedata");
+        }
+    } else {
+        processCompletion(nil, error);
+    }
+}
+
 
 // Fetch interesting photo
 - (void)fetchInterestingPhotosWithCompletionHandler:(void (^)(NSArray*, NSError *))completion {

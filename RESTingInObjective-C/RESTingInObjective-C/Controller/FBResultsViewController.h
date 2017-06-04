@@ -11,6 +11,4 @@
 
 @interface FBResultsViewController : UIViewController <UICollectionViewDelegate>
 
-@property(nonatomic)FBPhotoStore *photoStore;
-
 @end

@@ -20,9 +20,6 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Instantiate root VC
     FBResultsViewController *resultsVC = [[FBResultsViewController alloc] init];
-    
-    // Inject store abstration into resultsVC
-    resultsVC.photoStore = [[FBPhotoStore alloc] init];
     UINavigationController *navC = [[UINavigationController alloc] initWithRootViewController:resultsVC];
     
     // Initialize window
