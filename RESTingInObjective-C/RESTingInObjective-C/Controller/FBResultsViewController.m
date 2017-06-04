@@ -36,7 +36,6 @@ NSString *const cellId = @"PhotoCell";
 
 - (void)configure {
     // CollectionView
-    self.collectionView.delegate = self;
     self.dataSource = [[FBPhotosCollectionDataSource alloc] initWithPhotoStore:[[FBPhotoStore alloc]init]];
     self.collectionView.dataSource = self.dataSource;
     UINib *cellNib = [UINib nibWithNibName:@"FBPhotoCollectionViewCell" bundle:nil];
@@ -53,5 +52,10 @@ NSString *const cellId = @"PhotoCell";
         [self.collectionView reloadSections:[[NSIndexSet alloc] initWithIndex:0]];
     }];
 }
+
+
+#pragma mark: - CollectionView Layout
+
+
 
 @end

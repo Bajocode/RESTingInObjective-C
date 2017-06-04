@@ -33,7 +33,6 @@
 #pragma mark: - Methods
 
 - (void) updateWithImage:(UIImage*)image {
-    NSLog(@"%@", image);
     if (image) {
         [self.spinner stopAnimating];
         self.thumbImageView.image = image;

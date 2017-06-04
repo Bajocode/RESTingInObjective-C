@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 @class FBPhotoStore;
 
-@interface FBResultsViewController : UIViewController <UICollectionViewDelegate>
+@interface FBResultsViewController : UIViewController <UICollectionViewDelegateFlowLayout>
 
 @end
