@@ -35,7 +35,9 @@ NSString *const cellId = @"PhotoCell";
 #pragma mark - Methods
 
 - (void)configure {
+    self.navigationItem.title = @"Interesting Photos";
     // CollectionView
+    self.collectionView.delegate = self;
     self.dataSource = [[FBPhotosCollectionDataSource alloc] initWithPhotoStore:[[FBPhotoStore alloc]init]];
     self.collectionView.dataSource = self.dataSource;
     UINib *cellNib = [UINib nibWithNibName:@"FBPhotoCollectionViewCell" bundle:nil];
@@ -56,6 +58,15 @@ NSString *const cellId = @"PhotoCell";
 
 #pragma mark: - CollectionView Layout
 
-
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    CGFloat width = (self.view.bounds.size.width - 1) / 2;
+    return CGSizeMake(width, width*1.5);
+}
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
+    return 1;
+}
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
+    return 1;
+}
 
 @end
