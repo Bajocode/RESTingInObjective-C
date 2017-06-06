@@ -19,6 +19,7 @@
 		22A617D11EE352EB00E22878 /* FBPhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A617CF1EE352EB00E22878 /* FBPhotoCollectionViewCell.m */; };
 		22A617D21EE352EB00E22878 /* FBPhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22A617D01EE352EB00E22878 /* FBPhotoCollectionViewCell.xib */; };
 		22A617DA1EE35C5A00E22878 /* FBPhotosCollectionDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A617D91EE35C5A00E22878 /* FBPhotosCollectionDataSource.m */; };
+		22CE5FAA1EE73B410032C20C /* FBImageStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CE5FA91EE73B400032C20C /* FBImageStore.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,8 @@
 		22A617D01EE352EB00E22878 /* FBPhotoCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FBPhotoCollectionViewCell.xib; path = Controller/FBPhotoCollectionViewCell.xib; sourceTree = "<group>"; };
 		22A617D81EE35C5A00E22878 /* FBPhotosCollectionDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBPhotosCollectionDataSource.h; path = Model/FBPhotosCollectionDataSource.h; sourceTree = "<group>"; };
 		22A617D91EE35C5A00E22878 /* FBPhotosCollectionDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FBPhotosCollectionDataSource.m; path = Model/FBPhotosCollectionDataSource.m; sourceTree = "<group>"; };
+		22CE5FA81EE73B400032C20C /* FBImageStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBImageStore.h; path = Model/FBImageStore.h; sourceTree = "<group>"; };
+		22CE5FA91EE73B400032C20C /* FBImageStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FBImageStore.m; path = Model/FBImageStore.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +114,7 @@
 				22A617C91EE332F000E22878 /* FlickrAPI */,
 				22A617C81EE332E600E22878 /* PhotoStore */,
 				22A617D71EE35A5F00E22878 /* PhotosDataSource */,
+				22CE5FAB1EE73B440032C20C /* ImageStore */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -169,6 +173,15 @@
 				22A617D91EE35C5A00E22878 /* FBPhotosCollectionDataSource.m */,
 			);
 			name = PhotosDataSource;
+			sourceTree = "<group>";
+		};
+		22CE5FAB1EE73B440032C20C /* ImageStore */ = {
+			isa = PBXGroup;
+			children = (
+				22CE5FA81EE73B400032C20C /* FBImageStore.h */,
+				22CE5FA91EE73B400032C20C /* FBImageStore.m */,
+			);
+			name = ImageStore;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -247,6 +260,7 @@
 				222189981EDC03F000448CE8 /* AppDelegate.m in Sources */,
 				22858A221EE03E30008FA012 /* FBResultsViewController.m in Sources */,
 				22A617DA1EE35C5A00E22878 /* FBPhotosCollectionDataSource.m in Sources */,
+				22CE5FAA1EE73B410032C20C /* FBImageStore.m in Sources */,
 				222189951EDC03F000448CE8 /* main.m in Sources */,
 				22A617CD1EE3353D00E22878 /* FBPhotoStore.m in Sources */,
 				22A617D11EE352EB00E22878 /* FBPhotoCollectionViewCell.m in Sources */,
