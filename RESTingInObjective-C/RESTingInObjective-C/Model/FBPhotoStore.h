@@ -12,9 +12,15 @@
 @interface FBPhotoStore : NSObject
 
 
+#pragma mark: - Initializers
+
+- (instancetype)init;
+
+
 #pragma mark: - Methods
 
 - (void)fetchInterestingPhotosWithCompletionHandler:(void (^)(NSArray*, NSError *))completion;
 - (void)fetchImageForPhoto:(FBPhoto *)photo completionHandler:(void (^)(UIImage*, NSError *))completion;
+
 
 @end

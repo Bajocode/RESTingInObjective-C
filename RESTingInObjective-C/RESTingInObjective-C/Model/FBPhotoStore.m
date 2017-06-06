@@ -9,6 +9,13 @@
 #import "FBPhotoStore.h"
 #import "FBFlickrAPI.h"
 #import "FBPhoto.h"
+#import "FBImageStore.h"
+
+@interface FBPhotoStore ()
+
+@property (nonatomic) FBImageStore *imageStore;
+
+@end
 
 @implementation FBPhotoStore
 
@@ -27,26 +34,49 @@
 }
 
 
+#pragma mark - Initializers
+
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        // Setup
+        self.imageStore = [[FBImageStore alloc] init];
+    }
+    return self;
+}
+
+
 #pragma mark - Methods
 
 // Fetch image for photo
 - (void)fetchImageForPhoto:(FBPhoto *)photo completionHandler:(void (^)(UIImage*, NSError *))completion {
+    // Check cache and disk first
+    NSString *key = photo.photoID;
+    UIImage *image = [self.imageStore imageForKey:key];
+    if (image) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            completion(image, nil);
+        });
+        return;
+    }
+    
+    // Not found? Make new request
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:photo.remoteURL];
     NSURLSessionDataTask *dataTask = [[self session] dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         [self processImageRequestWithData:data urlResponse:response error:error completionHandler:^(UIImage *image, NSError *error) {
             // Dispatch back on main, pass image
-            dispatch_async(dispatch_get_main_queue(), ^{
-                
-                if (error) {
-                    completion(nil, error);
-                } else {
-                    completion(image, nil);
+                if (image) {
+                    [self.imageStore setImage:image forKey:key];
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        completion(image, nil);
+                    });
                 }
-            });
         }];
     }];
     [dataTask resume];
 }
+
+
 
 // Process HTTP image response
 - (void)processImageRequestWithData:(NSData*)data

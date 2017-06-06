@@ -24,6 +24,7 @@
     UIImage *imageFromCache = [self.cache objectForKey:key];
     // If in cache, return
     if (imageFromCache) {
+        NSLog(@"from cache");
         return imageFromCache;
     } else {
         // Get url and check disk
@@ -31,6 +32,7 @@
         UIImage *imageFromDisk = [UIImage imageWithContentsOfFile:url.path];
         if (imageFromDisk) {
             [self.cache setObject:imageFromDisk forKey:key];
+            NSLog(@"from disk");
             return imageFromDisk;
         } else {
             return nil;
@@ -70,9 +72,5 @@
     NSURL *docsDir = [docsDirs firstObject];
     return [docsDir URLByAppendingPathComponent:key];
 }
-
-
-
-
 
 @end
